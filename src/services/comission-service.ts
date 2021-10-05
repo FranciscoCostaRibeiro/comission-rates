@@ -56,6 +56,7 @@ export class commissionService {
         currency: "EUR",
       };
     } catch (e: any) {
+      console.log(e);
       throw new Error(e.message);
     }
   }

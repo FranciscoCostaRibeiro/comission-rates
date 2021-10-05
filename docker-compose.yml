@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  backend:
+    image: 'commission-rates:0.0.1'
+    depends_on: 
+      - mongodb
+    restart: unless-stopped
+    environment:
+      - DBURL=mongodb://test:pass12345@mongodb:27017/commission
+    ports:
+      - '127.0.0.1:3000:3000'
+    networks:
+      - mongodb
+
+  mongodb:
+    image: 'bitnami/mongodb:4.4-debian-10'
+    environment:
+      - MONGODB_ROOT_PASSWORD=root
+      - MONGODB_USERNAME=test
+      - MONGODB_PASSWORD=pass12345
+      - MONGODB_DATABASE=commission
+    volumes:
+      - ./mongodb-data:/data/db
+    ports:
+      - '127.0.0.1:27017:27017'
+    networks:
+      - mongodb
+
+
+networks:
+    mongodb:

@@ -1,0 +1,23 @@
+#Visual Studio Code folder
+.vscode/
+
+#Node build folders
+node_modules/
+dist/
+
+#Git repositories file
+.git
+.gitignore
+
+#Docker files
+Dockerfile
+.dockerignore
+
+#ReadMe
+README.md
+
+#ENVEXAMPLE
+.env.example
+.env
+
+tests/

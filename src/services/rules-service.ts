@@ -24,7 +24,7 @@ export class rulesService {
       clientId
     );
 
-    if (!value) {
+    if (!value || value.length === 0) {
       return null;
     }
 

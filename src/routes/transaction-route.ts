@@ -15,6 +15,7 @@ TransactionRoute.post("/", async (req, res) => {
       res.json(data);
     })
     .catch((error: Error) => {
+      console.log(error);
       res.status(500);
       res.send(error.message);
     });
